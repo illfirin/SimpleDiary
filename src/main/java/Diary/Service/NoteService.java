@@ -1,9 +1,9 @@
-package Diary.service;
+package Diary.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import system.Dao.NoteDao;
-import system.Model.User;
+import Diary.DAO.NoteDao;
+import Diary.Model.User;
 
 @Service
 public class NoteService
