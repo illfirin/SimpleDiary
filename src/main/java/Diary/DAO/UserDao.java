@@ -1,4 +1,4 @@
-package Diary.DAO;
+package SimpleDiary.Diary.DAO;
 
 import org.hibernate.criterion.RowCountProjection;
 import org.springframework.stereotype.Repository;
@@ -29,10 +29,10 @@ public class UserDao
 
         return template.update(sql);
     }
-
+?
     public int update(User user)
     {
-        String sql ="update Userd_table set login='"+user.getLogin()+"', password='"+user.getPassword()+"' where id="+user.getUserId()+"";
+        String sql ="update Users_table set login='"+user.getLogin()+"', password='"+user.getPassword()+"' where id="+user.getUserId()+"";
         return template.update(sql);
     }
 

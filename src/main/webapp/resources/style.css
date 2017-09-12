@@ -1,0 +1,128 @@
+*
+{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body
+{
+	color:#;
+	background-color:
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	display: flex;
+	align-items: center;
+}
+
+.login-form-header
+{
+	text-align: center;
+	background-color: #;
+	border: 1px solid #;
+	border-radius: 4px;
+
+	width: 80%;
+	margin: 40px 0;
+	padding: 50px;
+}
+
+.login-form-header h1
+{
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.login-form
+{
+	background-color: #;
+	border: 1px solid #;
+	border-radius: 4px;
+
+	width:80%
+	padding: 50px;
+	margin 0 0 40px 0;
+}
+
+.form-row
+{
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.form-row input[type='text']
+{
+	background-color: #;
+	border: 1px solid #;
+	border-radius: 4px;
+	width: 100%;
+	padding: 7px;
+	font-size: 14px;
+}
+
+.form-row label
+{
+	margin-bottom: 15px;
+}
+
+.form-row button
+{
+	font-size: 16px;
+	font-weight: bold;
+
+	color: #;
+	background-color: #;
+
+	border: none;
+	border-radius: 3px;
+	padding: 10px 40px;
+	cursor: pointer;
+}
+
+.form-row button:hover
+{
+	background-color: #;
+}
+.form-row button:active
+{
+	background-color: #;
+}
+
+@media only screen and(min-width: 700px)
+{
+	.login-form-header,
+	.login-form
+	{
+		width: 600px;
+	}
+
+	.form-row
+	{
+		flex-direction: row;
+		align-items: flex-start;
+		margin-bottom: 20px;
+	}
+
+	.form-row input[type='text']
+	{
+		width: 250px;
+		height: initial;
+	}
+
+	.form-row label
+	{
+		text-align: right;
+		width: 120px;
+		margin-top: 7px;
+		padding-right: 20px;
+	}
+
+	.form-row button
+	{
+		margin-left 120px;
+	}
+}

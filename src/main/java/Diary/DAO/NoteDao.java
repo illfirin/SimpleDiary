@@ -22,6 +22,33 @@ public class NoteDao
     {
         this.template = template;
     }
+    public int save(Note note)
+    {
+        String sql = "insert into Notes_table (id, title, content, tags, creation_time)
+        values('+note.getId()+', '"+note.getTitle()+"', '"+note.getContent()+"', '"+note.getTags()+"'
+            , '"+note.getCreation_time+"')";
+        return template.update(sql);
+    }
+
+    public int update(Note note)
+    {
+        String sql = "update Notes_table set id = '+note.getId()+', title='"+note.getTitle()+"', content="'+note.getContent()+'",tags='"+note.getTags()+"',
+                        creation_time='"+note.getCreation_time()+"' ";
+        return template.update(sql);
+    }
+
+    public int delete(Note note)
+    {
+        String sql = "select * from Notes_table where id =?";
+        return template.queryForObject(sql, new Object[]{id}, new BeadPropertyRowMapper<Note>(Note.classs));
+
+    }
+
+    public User getNoteById(int id)
+    {
+        String sql = "select * from Notes_table where id =" + id + "";
+        return template.update(sql);
+    }
 
     public List<Note> getAllNotes()
     {
@@ -36,9 +63,7 @@ public class NoteDao
               note.setContent(rs.getString(3))
               note.setTags(rs.getString(4));
               note.setCreation_time(rs.getString(5));
-
           }
-
        });
     }
 

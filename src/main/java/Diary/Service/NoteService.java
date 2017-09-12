@@ -3,7 +3,7 @@ package Diary.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import Diary.DAO.NoteDao;
-import Diary.Model.User;
+import Diary.Model.Note;
 
 @Service
 public class NoteService
