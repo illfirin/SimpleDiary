@@ -16,10 +16,10 @@ public class UserController
     @Autowired
     UserDao dao;
 
-    @RequestMapping(/"userform")
+    @RequestMapping("/userform")
     public ModelAndView showform()
     {
-        return new ModelAndView("userform", "comand", new User())
+        return new ModelAndView("userform", "comand", new User());
     }
 
     @RequestMapping(value="/save", method = RequestMethod.POST)
@@ -30,20 +30,19 @@ public class UserController
     }
 
     @RequestMapping(value ="/validate", method = RequestMethod.GET)
+    public ModelAndView validateUser(User user)
     {
-        public ModelAndView validateUser(User user)
-        {
-            ModelAndView modAndView = new ModelAndView();
-            ModelAndView.addObject("userFromServer", user);
-            modAndView.setViewName("home");
-            return modAndView;
-        }
+        ModelAndView modAndView = new ModelAndView();
+        modAndView.addObject("userFromServer", user);
+        modAndView.setViewName("home");
+        return modAndView;
     }
+
     @RequestMapping(value ="/check", method = RequestMethod.POST)
     public @ResponseBody
     String checkUser(@ModelAttribute("userFromServer") User user)
     {
-        if(@NonNull dao.getName(user) && user.getPassword(dao.getUserByName(user.getName))
+        if( @NonNull dao.getName(user) && user.getPassword(dao.getUserByName(user.getName))
         {
             return "valid";
         }
